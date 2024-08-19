@@ -16,6 +16,8 @@ from data.VPN import connect_to_vpn, disconnect_vpn
 options = webdriver.FirefoxOptions()
 service = Service(executable_path=geckodriver_path)
 options.set_preference("general.useragent.override", user_agent)
+options.set_preference("intl.accept_languages", "en-US, en")
+options.set_preference("timezoneId", "America/Los_Angeles")
 
 
 async def clickBtnCaptcha(driver):
@@ -82,13 +84,16 @@ def changeDriver(i, driver, options):
             driver.quit()
         except Exception as ex:
             pass
-        connect_to_vpn()
-        # options = createOption(i, options)
+        # connect_to_vpn()
+        options = createOption(i, options)
         driver = webdriver.Firefox(options=options, service=service)
+    driver.delete_all_cookies()
+
     return driver
 
 async def main(start, resultFile, lines):
-        driver = None
+        driver = webdriver.Firefox(options=options, service=service)
+        # driver.execute_cdp_cmd("Emulation.setGeolocationOverride", { "latitude": 37.7749, "longitude": -122.4194, "accuracy": 100 })
         for i, line in enumerate(lines):
             start_time = time.time()
             driver = changeDriver(i,  driver, options)
