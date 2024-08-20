@@ -15,8 +15,22 @@ vpn_servers = [
     {"country_code": "nl", "city_code": "ams"},  # Amsterdam, Netherlands
     {"country_code": "ch", "city_code": "zur"},  # Zurich, Switzerland
     {"server_code": "us-nyc-wg-003"},           # Specific server in New York, USA
-    {"server_code": "nl-ams-wg-004"}            # Specific server in Amsterdam, Netherlands
+    {"server_code": "nl-ams-wg-004"},           # Specific server in Amsterdam, Netherlands
+    {"country_code": "it", "city_code": "mil"},  # Milan, Italy
+    {"country_code": "es", "city_code": "mad"},  # Madrid, Spain
+    {"country_code": "no", "city_code": "osl"},  # Oslo, Norway
+    {"country_code": "se", "city_code": "sto"},  # Stockholm, Sweden
+    {"country_code": "fi", "city_code": "hel"},  # Helsinki, Finland
+    {"country_code": "at", "city_code": "vie"},  # Vienna, Austria
+    {"country_code": "pl", "city_code": "war"},  # Warsaw, Poland
+    {"country_code": "ru", "city_code": "msk"},  # Moscow, Russia
+    {"country_code": "sg", "city_code": "sin"},  # Singapore
+    {"country_code": "hk", "city_code": "hk"},   # Hong Kong
+    {"country_code": "in", "city_code": "del"},  # Delhi, India
+    {"country_code": "br", "city_code": "sao"},  # São Paulo, Brazil
+    {"country_code": "za", "city_code": "joh"},  # Johannesburg, South Africa
 ]
+
 
 
 def connect_vpn(country_code=None, city_code=None, server_code=None):

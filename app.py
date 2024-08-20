@@ -84,8 +84,8 @@ def changeDriver(i, driver, options):
             driver.quit()
         except Exception as ex:
             pass
-        # connect_to_vpn()
-        options = createOption(i, options)
+        connect_to_vpn()
+        # options = createOption(i, options)
         driver = webdriver.Firefox(options=options, service=service)
     driver.delete_all_cookies()
 
